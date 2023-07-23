@@ -1,12 +1,12 @@
 import "./App.css";
-import { Button } from "./components/Button/";
-import { ProductList } from "./components/ProductList/ProductList";
+import Button from "./components/Button/Button";
+import Smilelist from "./components/Smilelist/Smilelist";
 
 function App() {
   return (
     <div className="App">
-      <ProductList />
-      <Button>Button</Button>
+      <Smilelist />
+      <Button>Show Result</Button>
     </div>
   );
 }
