@@ -50,7 +50,7 @@ export default function Smilelist() {
           </button>
         </p>
       ))}
-      <Button maxVote={maxVote}>WHO IS WINNER</Button>
+      <Button maxVote={maxVote}>SHOW RESULT</Button>
     </div>
   );
 }
