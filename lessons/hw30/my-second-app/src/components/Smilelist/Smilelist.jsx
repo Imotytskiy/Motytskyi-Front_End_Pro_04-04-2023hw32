@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Button from "../Button/Button";
+
 const smiles = [
   {
     id: "1",
@@ -27,31 +28,37 @@ const smiles = [
     vote: 0,
   },
 ];
+
 export default function Smilelist() {
   const [data, setData] = useState(smiles);
+  const [winnerSmile, setWinnerSmile] = useState(null);
 
   const smileClick = (smilesId) => {
     const cloneData = [...data];
-    const smiles = cloneData.find((p) => p.id === smilesId);
-    if (smiles) {
-      smiles.vote += 1;
+    const smile = cloneData.find((p) => p.id === smilesId);
+    if (smile) {
+      smile.vote += 1;
       setData(cloneData);
     }
   };
+
   const maxVote = Math.max(...data.map((smile) => smile.vote));
-  const smileWithVoteNine = smiles.find((smile) => smile.vote === maxVote);
+  const smileWithVoteNine = data.find((smile) => smile.vote === maxVote);
+
   return (
     <div className="Smilelist">
-      <h1>SMILES</h1>
-      {data.map((smiles) => (
-        <p className="Smile" key={smiles.id}>
-          {smiles.smile}
-          <button className="Vote-Button" onClick={() => smileClick(smiles.id)}>
-            {smiles.vote}
+      <h1>{winnerSmile ? `ПЕРЕМОЖЕЦЬ: ${winnerSmile.smile}` : "SMILES"}</h1>
+      {data.map((smile) => (
+        <p className="Smile" key={smile.id}>
+          {smile.smile}
+          <button className="Vote-Button" onClick={() => smileClick(smile.id)}>
+            {smile.vote}
           </button>
         </p>
       ))}
-      <Button smileWithVoteNine={smileWithVoteNine}>SHOW RESULT</Button>
+      <Button onClick={() => setWinnerSmile(smileWithVoteNine)}>
+        SHOW RESULT
+      </Button>
     </div>
   );
 }
