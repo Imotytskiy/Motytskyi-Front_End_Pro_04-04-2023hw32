@@ -39,6 +39,7 @@ export default function Smilelist() {
     }
   };
   const maxVote = Math.max(...data.map((smile) => smile.vote));
+  const smileWithVoteNine = smiles.find((smile) => smile.vote === maxVote);
   return (
     <div className="Smilelist">
       <h1>SMILES</h1>
@@ -50,7 +51,7 @@ export default function Smilelist() {
           </button>
         </p>
       ))}
-      <Button maxVote={maxVote}>SHOW RESULT</Button>
+      <Button smileWithVoteNine={smileWithVoteNine}>SHOW RESULT</Button>
     </div>
   );
 }

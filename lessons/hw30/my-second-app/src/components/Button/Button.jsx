@@ -1,12 +1,12 @@
 import React from "react";
 
-export default function Button({ children, maxVote }) {
+export default function Button({ children, smileWithVoteNine }) {
   return (
     <p>
       <button
         className="Count-Button"
         onClick={() => {
-          console.log(maxVote);
+          console.log(smileWithVoteNine);
         }}
       >
         {children}
