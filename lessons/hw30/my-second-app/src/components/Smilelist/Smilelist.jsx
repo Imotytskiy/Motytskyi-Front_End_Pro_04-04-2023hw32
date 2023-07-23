@@ -43,11 +43,26 @@ export default function Smilelist() {
   };
 
   const maxVote = Math.max(...data.map((smile) => smile.vote));
-  const smileWithVoteNine = data.find((smile) => smile.vote === maxVote);
+  const smileObj = data.find((smile) => smile.vote === maxVote);
+  const drawVotes = data.filter(
+    (smile) => smile.vote === maxVote && smile.vote !== 0
+  ).length;
+
+  const handleClick = () => {
+    if (drawVotes > 1) {
+      alert("Однакова кількість голосів, повторне голосування");
+      window.location.reload();
+    }
+    setWinnerSmile(smileObj);
+  };
 
   return (
     <div className="Smilelist">
-      <h1>{winnerSmile ? `ПЕРЕМОЖЕЦЬ: ${winnerSmile.smile}` : "SMILES"}</h1>
+      <h1>
+        {winnerSmile && winnerSmile.vote > 0 && drawVotes < 2 // перевірка на 0 голосів (переможця не може бути)
+          ? `ПЕРЕМОЖЕЦЬ: ${winnerSmile.smile} з кількістю голосів ${winnerSmile.vote}`
+          : "SMILES"}
+      </h1>
       {data.map((smile) => (
         <p className="Smile" key={smile.id}>
           {smile.smile}
@@ -56,9 +71,7 @@ export default function Smilelist() {
           </button>
         </p>
       ))}
-      <Button onClick={() => setWinnerSmile(smileWithVoteNine)}>
-        SHOW RESULT
-      </Button>
+      <Button onClick={handleClick}>SHOW RESULT</Button>
     </div>
   );
 }
