@@ -59,7 +59,7 @@ export default function Smilelist() {
   return (
     <div className="Smilelist">
       <h1>
-        {winnerSmile && winnerSmile.vote > 0 && drawVotes < 2 // перевірка на 0 голосів (переможця не може бути)
+        {winnerSmile && winnerSmile.vote > 0 && drawVotes < 2
           ? `ПЕРЕМОЖЕЦЬ: ${winnerSmile.smile} з кількістю голосів ${winnerSmile.vote}`
           : "SMILES"}
       </h1>
