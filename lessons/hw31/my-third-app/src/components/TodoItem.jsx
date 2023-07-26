@@ -21,7 +21,7 @@ const styles = {
   },
   inputTextCrossed: {
     textDecoration: "line-through",
-    color: "gray", // Можете змінити колір на ваш розсуд
+    color: "red",
   },
 };
 
