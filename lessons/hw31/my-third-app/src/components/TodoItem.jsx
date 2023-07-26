@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import DelButton from "./DelButton";
 const styles = {
   li: {
     display: "flex",
@@ -25,7 +25,7 @@ const styles = {
   },
 };
 
-export default function TodoItem({ todo, index }) {
+export default function TodoItem({ todo, index, buttonDelClick }) {
   const [isChecked, setIsChecked] = useState(todo.completed);
   const handleClick = () => {
     console.log(todo.id, todo.completed);
@@ -47,7 +47,7 @@ export default function TodoItem({ todo, index }) {
           {todo.title}
         </span>
       </label>
-      <button className="rm">&times;</button>
+      <DelButton todo={todo} buttonDelClick={buttonDelClick} />
     </li>
   );
 }

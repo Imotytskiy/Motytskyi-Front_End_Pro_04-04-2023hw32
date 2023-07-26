@@ -7,12 +7,17 @@ const styles = {
     padding: 0,
   },
 };
-export default function TodoList(props) {
+export default function TodoList({ todos, buttonDelClick }) {
   return (
     <ul style={styles.ul}>
-      {props.todos.map((todo, index) => {
-        return <TodoItem todo={todo} index={index} key={todo.id} />;
-      })}
+      {todos.map((todo, index) => (
+        <TodoItem
+          todo={todo}
+          index={index}
+          key={todo.id}
+          buttonDelClick={buttonDelClick}
+        />
+      ))}
     </ul>
   );
 }

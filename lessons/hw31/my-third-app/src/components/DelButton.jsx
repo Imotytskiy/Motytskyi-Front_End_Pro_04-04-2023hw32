@@ -1,15 +1,13 @@
-// import React from "react";
+import React from "react";
 
-// export default function DelButton({ todo, initialTodos, setInitialTodos }) {
-//   const handleDeleteTodo = () => {
-//     console.log(todo.id);
-//     const updatedData = initialTodos.filter((item) => item.id !== todo.id);
-//     setInitialTodos(updatedData);
-//   };
+export default function DelButton({ todo, buttonDelClick }) {
+  const handleDeleteClick = () => {
+    buttonDelClick(todo.id);
+  };
 
-//   return (
-//     <button onClick={handleDeleteTodo} className="rm">
-//       &times;
-//     </button>
-//   );
-// }
+  return (
+    <button onClick={handleDeleteClick} className="rm">
+      &times;
+    </button>
+  );
+}
