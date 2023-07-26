@@ -43,9 +43,7 @@ export default function TodoItem({ todo, index }) {
           onChange={(e) => setIsChecked(e.target.checked)}
         />
         <b>{index + 1}. </b>
-        <span
-          style={!todo.completed ? styles.inputTextCrossed : styles.inputText}
-        >
+        <span style={isChecked ? styles.inputTextCrossed : styles.inputText}>
           {todo.title}
         </span>
       </label>
