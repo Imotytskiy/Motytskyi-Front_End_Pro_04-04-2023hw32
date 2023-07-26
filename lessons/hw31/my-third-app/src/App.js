@@ -26,12 +26,17 @@ function App() {
     setData([...data, newTodo]);
     setInputValue(""); // Очищуємо поле вводу після додавання справи
   };
+  const buttonDelClick = (delId) => {
+    console.log(delId);
+    const updatedData = data.filter((item) => item.id !== delId);
+    setData(updatedData);
+  };
 
   return (
     <>
       <div className="wrapper">
         <h1>todo-list</h1>
-        <TodoList todos={data} />
+        <TodoList todos={data} buttonDelClick={buttonDelClick} />
       </div>
       <div>
         <Button
