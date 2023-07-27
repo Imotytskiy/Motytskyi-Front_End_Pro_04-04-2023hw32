@@ -1,13 +1,10 @@
 import React, { useState } from "react";
 import TodoList from "./components/TodoList";
 import Button from "./components/Button";
+import { v4 as uuid } from "uuid";
 
 function App() {
-  const initialTodos = [
-    // { id: 1, completed: false, title: "Купити Хліба" },
-    // { id: 2, completed: false, title: "Купити Масла" },
-    // { id: 3, completed: false, title: "Купити Молока" },
-  ];
+  const initialTodos = [];
 
   const [data, setData] = useState(initialTodos);
   const [inputValue, setInputValue] = useState("");
@@ -16,9 +13,10 @@ function App() {
     if (inputValue.trim() === "") {
       return; // Якщо введений пустий рядок, нічого не робимо
     }
-
+    const unique_id = uuid();
     const newTodo = {
-      id: data.length + 1,
+      id: unique_id.slice(0, 8),
+      position: data.length + 1,
       completed: false,
       title: inputValue,
     };
