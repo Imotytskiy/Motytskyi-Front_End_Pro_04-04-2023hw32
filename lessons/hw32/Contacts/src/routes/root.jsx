@@ -12,6 +12,12 @@ export default function Root() {
 
     fetchData();
   }, []);
+
+  const buttonDelClick = (delId) => {
+    const updatedData = users.filter((user) => user.id !== delId);
+    setUsers(updatedData);
+  };
+
   return (
     <>
       <nav>
@@ -22,6 +28,7 @@ export default function Root() {
               <th>Ім'я</th>
               <th>Прізвище</th>
               <th>Телефон</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -31,13 +38,15 @@ export default function Root() {
                 <td>{user.username}</td>
                 <td>{user.phone}</td>
                 <td>
-                  <button>DELETE</button>
+                  <button onClick={() => buttonDelClick(user.id)}>
+                    DELETE
+                  </button>
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
-        <button type="submit">ДОДАТИ КОНТАКТ</button>
+        {/* <button type="submit">ДОДАТИ КОНТАКТ</button> */}
       </nav>
     </>
   );
