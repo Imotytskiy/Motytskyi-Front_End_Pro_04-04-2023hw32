@@ -130,7 +130,67 @@ button:active {
   background-size: 1rem;
   position: relative;
 }
+/* Overall styling for the nav container */
+nav {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 40px auto;
+}
 
+/* Styling for the table header */
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Basic table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table,
+th,
+td {
+  border: 1px solid #ddd;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px 12px;
+}
+
+th {
+  background-color: #f2f2f2;
+  color: #555;
+}
+
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+button {
+  padding: 5px 10px;
+  border: none;
+  background-color: #e74c3c; /* Red */
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #c0392b; /* Darker red */
+}
+h1 {
+  text-align: center;
+}
 nav {
   margin: auto;
 }

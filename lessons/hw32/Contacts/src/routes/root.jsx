@@ -28,7 +28,7 @@ export default function Root() {
               <th>Ім'я</th>
               <th>Прізвище</th>
               <th>Телефон</th>
-              <th>Actions</th>
+              <th>Видалення</th>
             </tr>
           </thead>
           <tbody>
@@ -46,7 +46,6 @@ export default function Root() {
             ))}
           </tbody>
         </table>
-        {/* <button type="submit">ДОДАТИ КОНТАКТ</button> */}
       </nav>
     </>
   );

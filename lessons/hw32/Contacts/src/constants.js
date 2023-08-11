@@ -1,4 +1,4 @@
- export const ROUTES = {
-    root: '/',
-    albums: '/albums'
- }
+export const ROUTES = {
+  root: "/contacts",
+  albums: "/creatnewcontact",
+};
