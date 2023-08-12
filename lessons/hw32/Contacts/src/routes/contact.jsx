@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { v4 as uuid } from "uuid";
+import { Link } from "react-router-dom";
 export default function Contact() {
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
@@ -60,12 +61,13 @@ export default function Contact() {
           className={phone ? "input-lightgreen" : ""}
         />
       </label>
-      <button type="submit" className="button-save">
+      <Link type="submit" className="button-save" to="/">
         ЗБЕРЕГТИ
-      </button>
-      <button type="button" className="button-denied">
+      </Link>
+
+      <Link className="button-denied" to="/">
         СКАСУВАТИ
-      </button>
+      </Link>
     </form>
   );
 }

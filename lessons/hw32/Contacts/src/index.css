@@ -358,15 +358,29 @@ nav {
   padding: 5px 10px;
   font-size: 16px;
   margin: 15px;
+  border-radius: 4px;
+  color: #f4f4f4;
+  text-decoration: none;
+  text-align: center;
   background: lightgreen;
 }
 .button-denied {
   padding: 5px 10px;
   font-size: 16px;
   margin: 15px;
+  border-radius: 4px;
   background: lightcoral;
+  text-decoration: none;
+  color: #f4f4f4;
+  text-align: center;
+}
+.button-denied:hover {
+  background-color: #c0392b;
 }
 
+.button-save:hover {
+  background-color: #c0392b;
+}
 .input-lightgreen {
   background: lightgreen;
 }
