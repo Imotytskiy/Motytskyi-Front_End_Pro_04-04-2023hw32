@@ -26,6 +26,7 @@ export default function Contact() {
     setName("");
     setSurname("");
     setPhone("");
+    window.location.href = "/";
   };
 
   return (
