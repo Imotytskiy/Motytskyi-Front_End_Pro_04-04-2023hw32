@@ -6,6 +6,12 @@ export default function Contact() {
   const [surname, setSurname] = useState("");
   const [phone, setPhone] = useState("");
 
+  const history = useHistory();
+
+  const handleCancelClick = () => {
+    history.push("/");
+  };
+
   return (
     <Form method="post" action="/events" className="form">
       <label htmlFor="name" className="label">
@@ -50,7 +56,7 @@ export default function Contact() {
       <button type="submit" className="button-save">
         ЗБЕРЕГТИ
       </button>
-      <button type="button" className="button-denied">
+      <button type="button" className="button" onClick={handleCancelClick}>
         СКАСУВАТИ
       </button>
     </Form>
