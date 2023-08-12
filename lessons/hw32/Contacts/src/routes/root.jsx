@@ -8,8 +8,15 @@ export default function Root() {
 
   useEffect(() => {
     async function fetchData() {
-      const result = await getUsers();
-      setUsers(result.users);
+      const storedContacts = JSON.parse(sessionStorage.getItem("contacts"));
+
+      if (!storedContacts || storedContacts.length === 0) {
+        const result = await getUsers();
+        setUsers(result.users);
+        sessionStorage.setItem("contacts", JSON.stringify(result.users));
+      } else {
+        setUsers(storedContacts);
+      }
     }
 
     fetchData();
@@ -18,6 +25,7 @@ export default function Root() {
   const buttonDelClick = (delId) => {
     const updatedData = users.filter((user) => user.id !== delId);
     setUsers(updatedData);
+    sessionStorage.setItem("contacts", JSON.stringify(updatedData));
   };
 
   const newContact = (contactDetails) => {
