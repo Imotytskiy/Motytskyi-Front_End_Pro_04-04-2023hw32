@@ -7,7 +7,6 @@ import Contact from "./routes/contact";
 const router = createBrowserRouter([
   {
     path: "/",
-    redirectTo: "/contact",
     element: <Root />,
   },
   {
