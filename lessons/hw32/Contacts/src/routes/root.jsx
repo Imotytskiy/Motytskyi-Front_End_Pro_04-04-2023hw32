@@ -46,6 +46,9 @@ export default function Root() {
             ))}
           </tbody>
         </table>
+        <button className="new-contact" type="submit">
+          ДОДАТИ КОНТАКТ
+        </button>
       </nav>
     </>
   );
