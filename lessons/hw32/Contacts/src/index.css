@@ -327,3 +327,18 @@ nav {
   display: flex;
   flex-direction: column;
 }
+
+.new-contact {
+  padding: 10px 20px;
+  border-radius: 8px;
+  margin-top: 15px;
+  margin-left: 60px;
+  text-align: center;
+  background: lightskyblue;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.new-contact:hover {
+  background: #3992ff;
+}
