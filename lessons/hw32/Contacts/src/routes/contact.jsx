@@ -1,6 +1,5 @@
-import { Form } from "react-router-dom";
 import { useState } from "react";
-
+import { v4 as uuid } from "uuid";
 export default function Contact() {
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
@@ -8,11 +7,21 @@ export default function Contact() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("Form submitted:", { name, surname, phone });
+    const unique_id = uuid();
+    const newContact = {
+      id: unique_id.slice(0, 8),
+      name: name,
+      username: surname,
+      phone: phone,
+    };
+    setName("");
+    setSurname("");
+    setPhone("");
+    console.log("TEST", newContact);
   };
 
   return (
-    <Form className="form" onSubmit={handleSubmit}>
+    <form className="form" onSubmit={handleSubmit}>
       <label htmlFor="name" className="label">
         <p> Ім'я </p>
         <input
@@ -51,13 +60,12 @@ export default function Contact() {
           className={phone ? "input-lightgreen" : ""}
         />
       </label>
-
       <button type="submit" className="button-save">
         ЗБЕРЕГТИ
       </button>
       <button type="button" className="button-denied">
         СКАСУВАТИ
       </button>
-    </Form>
+    </form>
   );
 }

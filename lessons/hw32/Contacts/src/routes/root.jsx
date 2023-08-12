@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import getUsers from "../services/getUsers";
 import { Link } from "react-router-dom";
+import { ContactContext } from "../component/ContactContext";
 
 export default function Root() {
   const [users, setUsers] = useState([]);
@@ -19,42 +20,53 @@ export default function Root() {
     setUsers(updatedData);
   };
 
+  const newContact = (contactDetails) => {
+    console.log("Form submitted:", contactDetails);
+    setUsers((prevUsers) => [...prevUsers, contactDetails]);
+  };
+
   return (
     <>
-      <nav>
-        <h1>HW32. Контакти</h1>
-        <table>
-          <thead>
-            <tr>
-              <th>Ім'я</th>
-              <th>Прізвище</th>
-              <th>Телефон</th>
-              <th>Видалення</th>
-            </tr>
-          </thead>
-          <tbody>
-            {users.map((user) => (
-              <tr key={user.id}>
-                <td>{user.name}</td>
-                <td>{user.username}</td>
-                <td>{user.phone}</td>
+      <ContactContext.Provider value={{ newContact }}>
+        <nav>
+          <h1>HW32. Контакти</h1>
+          <table>
+            <thead>
+              <tr>
+                <th>Ім'я</th>
+                <th>Прізвище</th>
+                <th>Телефон</th>
+                <th>Видалення</th>
+              </tr>
+            </thead>
+            <tbody>
+              {users.map((user) => (
+                <tr key={user.id}>
+                  <td>{user.name}</td>
+                  <td>{user.username}</td>
+                  <td>{user.phone}</td>
+                  <td>
+                    <button onClick={() => buttonDelClick(user.id)}>
+                      DELETE
+                    </button>
+                  </td>
+                </tr>
+              ))}
+              <tr>
                 <td>
-                  <button onClick={() => buttonDelClick(user.id)}>
-                    DELETE
-                  </button>
+                  <Link
+                    onNewContact={newContact}
+                    className="new-contact"
+                    to="/contact"
+                  >
+                    ДOДАТИ КОНТАКТ
+                  </Link>
                 </td>
               </tr>
-            ))}
-            <tr>
-              <td>
-                <Link className="new-contact" to="/contact">
-                  ДOДАТИ КОНТАКТ
-                </Link>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </nav>
+            </tbody>
+          </table>
+        </nav>
+      </ContactContext.Provider>
     </>
   );
 }
