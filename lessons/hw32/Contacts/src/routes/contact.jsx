@@ -1,22 +1,15 @@
 import { Form } from "react-router-dom";
 import { useState } from "react";
-import { useHistory } from "react-router-dom";
 
 export default function Contact() {
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
   const [phone, setPhone] = useState("");
 
-  const history = useHistory();
-
-  const handleCancelClick = () => {
-    history.push("/");
-  };
-
   return (
     <Form method="post" action="/events" className="form">
       <label htmlFor="name" className="label">
-        Ім'я
+        <p> Ім'я </p>
         <input
           type="text"
           name="title"
@@ -29,7 +22,7 @@ export default function Contact() {
       </label>
 
       <label htmlFor="surname" className="label">
-        Прізвище
+        <p>Прізвище</p>
         <input
           type="text"
           name="description"
@@ -42,7 +35,7 @@ export default function Contact() {
       </label>
 
       <label htmlFor="phone" className="label">
-        Номер телефону
+        <p>Номер телефону</p>
         <input
           type="text"
           name="phone"
@@ -54,10 +47,10 @@ export default function Contact() {
         />
       </label>
 
-      <button type="submit" className="button">
+      <button type="submit" className="button-save">
         ЗБЕРЕГТИ
       </button>
-      <button type="button" className="button" onClick={handleCancelClick}>
+      <button type="button" className="button-denied">
         СКАСУВАТИ
       </button>
     </Form>
