@@ -3,17 +3,17 @@ import * as ReactDOM from "react-dom/client";
 import "./index.css";
 import Root from "./routes/root";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-// import Contact from "./routes/contact";
+import Contact from "./routes/contact";
 const router = createBrowserRouter([
   {
     path: "/",
-    redirectTo: "/contacts",
+    redirectTo: "/contact",
     element: <Root />,
   },
-  // {
-  //   path: "contacts/",
-  //   element: <Contact />,
-  // },
+  {
+    path: "/contact",
+    element: <Contact />,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

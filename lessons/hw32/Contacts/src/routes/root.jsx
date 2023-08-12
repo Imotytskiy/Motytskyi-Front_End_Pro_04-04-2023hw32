@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import getUsers from "../services/getUsers";
+import { Link } from "react-router-dom";
 
 export default function Root() {
   const [users, setUsers] = useState([]);
@@ -44,11 +45,15 @@ export default function Root() {
                 </td>
               </tr>
             ))}
+            <tr>
+              <td>
+                <Link className="new-contact" to="/contact">
+                  ДOДАТИ КОНТАКТ
+                </Link>
+              </td>
+            </tr>
           </tbody>
         </table>
-        <button className="new-contact" type="submit">
-          ДОДАТИ КОНТАКТ
-        </button>
       </nav>
     </>
   );

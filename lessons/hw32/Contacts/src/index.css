@@ -331,14 +331,42 @@ nav {
 .new-contact {
   padding: 10px 20px;
   border-radius: 8px;
-  margin-top: 15px;
-  margin-left: 60px;
   text-align: center;
   background: lightskyblue;
   cursor: pointer;
   transition: background-color 0.2s;
+  text-decoration: none;
+  color: #f4f4f4;
 }
 
 .new-contact:hover {
   background: #3992ff;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.label {
+  margin-bottom: 10px;
+}
+
+.button-save {
+  padding: 5px 10px;
+  font-size: 16px;
+  margin: 15px;
+  background: lightgreen;
+}
+.button-denied {
+  padding: 5px 10px;
+  font-size: 16px;
+  margin: 15px;
+  background: lightcoral;
+}
+
+.input-lightgreen {
+  background: lightgreen;
 }
