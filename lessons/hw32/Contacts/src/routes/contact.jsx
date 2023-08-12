@@ -6,8 +6,13 @@ export default function Contact() {
   const [surname, setSurname] = useState("");
   const [phone, setPhone] = useState("");
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log("Form submitted:", { name, surname, phone });
+  };
+
   return (
-    <Form method="post" action="/events" className="form">
+    <Form className="form" onSubmit={handleSubmit}>
       <label htmlFor="name" className="label">
         <p> Ім'я </p>
         <input
