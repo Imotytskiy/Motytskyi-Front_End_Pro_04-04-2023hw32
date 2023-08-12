@@ -35,46 +35,46 @@ export default function Root() {
 
   return (
     <>
-      <ContactContext.Provider value={{ newContact }}>
-        <nav>
-          <h1>HW32. Контакти</h1>
-          <table>
-            <thead>
-              <tr>
-                <th>Ім'я</th>
-                <th>Прізвище</th>
-                <th>Телефон</th>
-                <th>Видалення</th>
-              </tr>
-            </thead>
-            <tbody>
-              {users.map((user) => (
-                <tr key={user.id}>
-                  <td>{user.name}</td>
-                  <td>{user.username}</td>
-                  <td>{user.phone}</td>
-                  <td>
-                    <button onClick={() => buttonDelClick(user.id)}>
-                      DELETE
-                    </button>
-                  </td>
-                </tr>
-              ))}
-              <tr>
+      {/* <ContactContext.Provider value={{ newContact }}> */}
+      <nav>
+        <h1>HW32. Контакти</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>Ім'я</th>
+              <th>Прізвище</th>
+              <th>Телефон</th>
+              <th>Видалення</th>
+            </tr>
+          </thead>
+          <tbody>
+            {users.map((user) => (
+              <tr key={user.id}>
+                <td>{user.name}</td>
+                <td>{user.username}</td>
+                <td>{user.phone}</td>
                 <td>
-                  <Link
-                    onNewContact={newContact}
-                    className="new-contact"
-                    to="/contact"
-                  >
-                    ДOДАТИ КОНТАКТ
-                  </Link>
+                  <button onClick={() => buttonDelClick(user.id)}>
+                    DELETE
+                  </button>
                 </td>
               </tr>
-            </tbody>
-          </table>
-        </nav>
-      </ContactContext.Provider>
+            ))}
+            <tr>
+              <td>
+                <Link
+                  // onNewContact={newContact}
+                  className="new-contact"
+                  to="/contact"
+                >
+                  ДOДАТИ КОНТАКТ
+                </Link>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </nav>
+      {/* </ContactContext.Provider> */}
     </>
   );
 }
