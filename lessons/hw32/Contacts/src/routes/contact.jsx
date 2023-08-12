@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { v4 as uuid } from "uuid";
 import { Link } from "react-router-dom";
+
 export default function Contact() {
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
@@ -15,10 +16,16 @@ export default function Contact() {
       username: surname,
       phone: phone,
     };
+    console.log("TEST", newContact);
+
+    const existingContacts =
+      JSON.parse(sessionStorage.getItem("contacts")) || [];
+    existingContacts.push(newContact);
+    sessionStorage.setItem("contacts", JSON.stringify(existingContacts));
+
     setName("");
     setSurname("");
     setPhone("");
-    console.log("TEST", newContact);
   };
 
   return (
@@ -52,7 +59,7 @@ export default function Contact() {
       <label htmlFor="phone" className="label">
         <p>Номер телефону</p>
         <input
-          type="text"
+          type="number"
           name="phone"
           id="phone"
           required
@@ -61,9 +68,10 @@ export default function Contact() {
           className={phone ? "input-lightgreen" : ""}
         />
       </label>
-      <Link type="submit" className="button-save" to="/">
+
+      <button type="submit" className="button-save">
         ЗБЕРЕГТИ
-      </Link>
+      </button>
 
       <Link className="button-denied" to="/">
         СКАСУВАТИ
