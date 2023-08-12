@@ -1,5 +1,6 @@
 import { Form } from "react-router-dom";
 import { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 export default function Contact() {
   const [name, setName] = useState("");
@@ -15,7 +16,7 @@ export default function Contact() {
   return (
     <Form method="post" action="/events" className="form">
       <label htmlFor="name" className="label">
-        <p>Ім'я</p>
+        Ім'я
         <input
           type="text"
           name="title"
@@ -28,7 +29,7 @@ export default function Contact() {
       </label>
 
       <label htmlFor="surname" className="label">
-        <p>Прізвище</p>
+        Прізвище
         <input
           type="text"
           name="description"
@@ -41,7 +42,7 @@ export default function Contact() {
       </label>
 
       <label htmlFor="phone" className="label">
-        <p> Номер телефону</p>
+        Номер телефону
         <input
           type="text"
           name="phone"
@@ -53,7 +54,7 @@ export default function Contact() {
         />
       </label>
 
-      <button type="submit" className="button-save">
+      <button type="submit" className="button">
         ЗБЕРЕГТИ
       </button>
       <button type="button" className="button" onClick={handleCancelClick}>
