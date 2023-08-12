@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import getUsers from "../services/getUsers";
 import { Link } from "react-router-dom";
-import { ContactContext } from "../component/ContactContext";
+// import { ContactContext } from "../component/ContactContext";  // реализация через state
 
 export default function Root() {
   const [users, setUsers] = useState([]);
@@ -28,10 +28,10 @@ export default function Root() {
     sessionStorage.setItem("contacts", JSON.stringify(updatedData));
   };
 
-  const newContact = (contactDetails) => {
-    console.log("Form submitted:", contactDetails);
-    setUsers((prevUsers) => [...prevUsers, contactDetails]);
-  };
+  // const newContact = (contactDetails) => {
+  //   console.log("Form submitted:", contactDetails);
+  //   setUsers((prevUsers) => [...prevUsers, contactDetails]);
+  // };
 
   return (
     <>
