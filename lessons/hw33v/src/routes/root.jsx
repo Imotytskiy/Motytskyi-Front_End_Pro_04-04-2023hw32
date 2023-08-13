@@ -23,7 +23,11 @@ export default function Root() {
                 <td>{user.username}</td>
                 <td>{user.id}</td>
                 <td>
-                  <NavLink className="new-contact" to="/albums/:albumId">
+                  <NavLink
+                    key={user.id}
+                    className="new-contact"
+                    to="/albums/:albumId"
+                  >
                     Album
                   </NavLink>
                 </td>
