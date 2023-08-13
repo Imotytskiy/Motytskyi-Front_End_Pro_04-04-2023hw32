@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useLoaderData } from "react-router-dom";
 
 export default function Root() {
@@ -23,9 +23,9 @@ export default function Root() {
                 <td>{user.username}</td>
                 <td>{user.id}</td>
                 <td>
-                  <Link className="new-contact" to="/albums/:albumId">
+                  <NavLink className="new-contact" to="/albums/:albumId">
                     Album
-                  </Link>
+                  </NavLink>
                 </td>
               </tr>
             ))}
