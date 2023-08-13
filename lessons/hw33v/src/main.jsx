@@ -4,10 +4,12 @@ import "./index.css";
 import Root from "./routes/root";
 import Albums from "./routes/albums";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import getUsers from "./services/getUsers";
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
+    loader: getUsers,
   },
   {
     path: "/albums/:albumId",

@@ -1,22 +1,11 @@
-import { useEffect, useState } from "react";
-import getUsers from "../services/getUsers";
 import { Link } from "react-router-dom";
-// import { ContactContext } from "../component/ContactContext";  // реализация через state
+import { useLoaderData } from "react-router-dom";
 
 export default function Root() {
-  const [users, setUsers] = useState([]);
-
-  useEffect(() => {
-    async function fetchData() {
-      const result = await getUsers();
-      setUsers(result.users);
-    }
-    fetchData();
-  }, []);
+  const { users } = useLoaderData();
 
   return (
     <>
-      {/* <ContactContext.Provider value={{ newContact }}> */}
       <nav>
         <h1>HW 34. React router</h1>
         <table>
@@ -43,7 +32,6 @@ export default function Root() {
           </tbody>
         </table>
       </nav>
-      {/* </ContactContext.Provider> */}
     </>
   );
 }
