@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useLoaderData } from "react-router-dom";
 
-export default function Root() {
+export default function Users() {
   const { users } = useLoaderData();
 
   return (
@@ -28,7 +28,7 @@ export default function Root() {
                     className="new-contact"
                     to={`/albums/${user.id}`}
                   >
-                    Album
+                    Albums
                   </NavLink>
                 </td>
               </tr>

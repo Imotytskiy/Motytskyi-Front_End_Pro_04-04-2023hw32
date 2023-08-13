@@ -1,19 +1,22 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useLoaderData } from "react-router-dom";
 
-export default function Albums() {
-  const { albums } = useLoaderData();
+export default function Photos() {
+  const { photos } = useLoaderData();
+
   return (
     <tbody>
-      {albums.map((album) => (
-        <tr key={album.id}>
-          <td>{album.title}</td>
-          <td>{album.userId}</td>
-          <td>{album.id}</td>
+      {photos.map((photo) => (
+        <tr key={photo.id}>
           <td>
-            <Link className="new-contact" to="/">
+            <img src={photo.thumbnailUrl} alt={photo.title} />
+          </td>
+          <td>{photo.title}</td>
+          <td>{photo.id}</td>
+          <td>
+            <NavLink className="new-contact" to="/">
               ПОВЕРНУТИСЯ
-            </Link>
+            </NavLink>
           </td>
         </tr>
       ))}

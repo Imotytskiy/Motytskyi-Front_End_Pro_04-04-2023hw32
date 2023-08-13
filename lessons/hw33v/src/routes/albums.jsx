@@ -20,7 +20,11 @@ export default function Albums() {
             <td>{album.userId}</td>
             <td>{album.id}</td>
             <td>
-              <NavLink className="new-contact" to="/">
+              <NavLink
+                key={album.id}
+                className="new-contact"
+                to={`/albums/${album.id}/photos`}
+              >
                 PHOTOS
               </NavLink>
               <Link className="button-denied" to="/">
