@@ -26,7 +26,7 @@ export default function Root() {
                   <NavLink
                     key={user.id}
                     className="new-contact"
-                    to="/albums/:albumId"
+                    to={`/albums/${user.id}`}
                   >
                     Album
                   </NavLink>

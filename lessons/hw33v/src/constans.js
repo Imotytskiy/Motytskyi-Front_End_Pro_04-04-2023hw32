@@ -1,5 +1,5 @@
 export const ROUTES = {
   root: "/",
-  albums: (albumsId = "") =>
-    albumsId ? `/users/${albumsId}/albums` : "users/:albumsId",
+  albums: (userId = "") =>
+    albumsId ? `/users/${userId}/albums` : "users/:userId",
 };

@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useLoaderData } from "react-router-dom";
 
 export default function Albums() {
   const { albums } = useLoaderData();
-  console.log(albums);
   return (
     <tbody>
       {albums.map((album) => (
@@ -12,6 +12,9 @@ export default function Albums() {
           <td>{album.userId}</td>
           <td>{album.id}</td>
           <td>
+            <NavLink className="new-contact" to="/">
+              PHOTOS
+            </NavLink>
             <Link className="button-denied" to="/">
               ПОВЕРНУТИСЯ
             </Link>

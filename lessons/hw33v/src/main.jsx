@@ -6,6 +6,7 @@ import Albums from "./routes/albums";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { getUsers } from "./services/getUsers";
 import { getAlbums } from "./services/getAlbums";
+import { ROUTES } from "./constans";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -13,6 +14,7 @@ const router = createBrowserRouter([
     loader: getUsers,
   },
   {
+    // path: ROUTES.albums(),
     path: "/albums/:albumId",
     element: <Albums />,
     loader: getAlbums,
