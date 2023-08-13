@@ -4,7 +4,8 @@ import "./index.css";
 import Root from "./routes/root";
 import Albums from "./routes/albums";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import getUsers from "./services/getUsers";
+import { getUsers } from "./services/getUsers";
+import { getAlbums } from "./services/getAlbums";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -14,6 +15,7 @@ const router = createBrowserRouter([
   {
     path: "/albums/:albumId",
     element: <Albums />,
+    loader: getAlbums,
   },
   // {
   //   path: "/photos",
