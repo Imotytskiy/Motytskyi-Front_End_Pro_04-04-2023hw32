@@ -34,11 +34,7 @@ export default function Root() {
                 <td>{user.username}</td>
                 <td>{user.id}</td>
                 <td>
-                  <Link
-                    // onNewContact={newContact}
-                    className="new-contact"
-                    to="/albums/:userId"
-                  >
+                  <Link className="new-contact" to="/albums/:albumId">
                     Album
                   </Link>
                 </td>
