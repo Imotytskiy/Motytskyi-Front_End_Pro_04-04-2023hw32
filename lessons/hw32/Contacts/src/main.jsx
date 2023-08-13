@@ -3,16 +3,15 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import Root from "./routes/root";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Contact from "./routes/contact";
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
   },
-  {
-    path: "/contact",
-    element: <Contact />,
-  },
+  // {
+  //   path: "/contact",
+  //   element: <Contact />,
+  // },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
