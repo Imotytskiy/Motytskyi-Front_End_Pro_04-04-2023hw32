@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { v4 as uuid } from "uuid";
 import { Link } from "react-router-dom";
+import { ROUTES } from "../constants";
 
 export default function Contact() {
   const [name, setName] = useState("");
@@ -74,7 +75,7 @@ export default function Contact() {
         ЗБЕРЕГТИ
       </button>
 
-      <Link className="button-denied" to="/">
+      <Link className="button-denied" to={ROUTES.root}>
         СКАСУВАТИ
       </Link>
     </form>

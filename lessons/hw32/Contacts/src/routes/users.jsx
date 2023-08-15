@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import getUsers from "../services/getUsers";
 import { Link } from "react-router-dom";
-// import { ContactContext } from "../component/ContactContext";  // реализация через state
+import { ROUTES } from "../constants";
 
-export default function Root() {
+export default function Users() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
@@ -28,14 +28,8 @@ export default function Root() {
     sessionStorage.setItem("contacts", JSON.stringify(updatedData));
   };
 
-  // const newContact = (contactDetails) => {
-  //   console.log("Form submitted:", contactDetails);
-  //   setUsers((prevUsers) => [...prevUsers, contactDetails]);
-  // };
-
   return (
     <>
-      {/* <ContactContext.Provider value={{ newContact }}> */}
       <nav>
         <h1>HW32. Контакти</h1>
         <table>
@@ -62,11 +56,7 @@ export default function Root() {
             ))}
             <tr>
               <td>
-                <Link
-                  // onNewContact={newContact}
-                  className="new-contact"
-                  to="/contact"
-                >
+                <Link className="new-contact" to={ROUTES.contact}>
                   ДOДАТИ КОНТАКТ
                 </Link>
               </td>
@@ -74,7 +64,6 @@ export default function Root() {
           </tbody>
         </table>
       </nav>
-      {/* </ContactContext.Provider> */}
     </>
   );
 }
