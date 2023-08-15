@@ -6,23 +6,16 @@ import Contact from "./routes/contact";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ROUTES } from "./constants";
 
-const basename = import.meta.env.DEV
-  ? "/"
-  : "/Motytskyi-Front_End_Pro_04-04-2023/";
-
-const router = createBrowserRouter(
-  [
-    {
-      path: ROUTES.root,
-      element: <Users />,
-    },
-    {
-      path: ROUTES.contact,
-      element: <Contact />,
-    },
-  ],
-  { basename }
-);
+const router = createBrowserRouter([
+  {
+    path: ROUTES.root,
+    element: <Users />,
+  },
+  {
+    path: ROUTES.contact,
+    element: <Contact />,
+  },
+]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

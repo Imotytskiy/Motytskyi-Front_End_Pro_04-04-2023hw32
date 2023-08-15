@@ -1,8 +1,8 @@
-import { defineConfig } from "vite";
+// base: "/Motytskyi-Front_End_Pro_04-04-2023hw32/",
+// vite.config.js
 import react from "@vitejs/plugin-react";
 
-// https://vitejs.dev/config/
-export default defineConfig({
+export default {
   plugins: [react()],
-  base: "/", // подключал разные варианты
-});
+  base: "./",
+};
